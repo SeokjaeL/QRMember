@@ -6,12 +6,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".PayActivity">
 
-
-    <Button
-        android:id="@+id/btn_paymenu"
+    <EditText
+        android:id="@+id/amountEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=" 결제하기" />
+        android:hint="결제 금액 입력"
+        android:inputType="numberDecimal"/>
+
+    <Button
+        android:id="@+id/payButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="결제하기"/>
+
 </LinearLayout>

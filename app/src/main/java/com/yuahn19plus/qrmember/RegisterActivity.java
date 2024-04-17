@@ -150,6 +150,12 @@ public class RegisterActivity extends AppCompatActivity {
                             mFirebaseAuth.createUserWithEmailAndPassword(strEmail, strPwd).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
+
+                                    // 사용자 생성 성공, 사용자의 UID 가져오기
+                                    FirebaseUser firebaseUser = task.getResult().getUser();
+                                    String uid = firebaseUser.getUid();  // 이 UID를 문서 ID로 사용
+
+                                    // Firebase에 저장할 데이터 객체 생성
                                     if(task.isSuccessful()){
 
 
@@ -163,13 +169,12 @@ public class RegisterActivity extends AppCompatActivity {
                                         user.put("point", 50);
 
                                         // "User" 컬렉션에 데이터 추가
-                                        db.collection("User").add(user).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<DocumentReference>() {
+                                        db.collection("User").document(uid).set(user).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<Void>() {
                                             @Override
-                                            public void onComplete(@NonNull Task<DocumentReference> task) {
+                                            public void onComplete(@NonNull Task<Void> task) {
                                                 if(task.isSuccessful()){
                                                     Toast.makeText(RegisterActivity.this, "회원가입 성공", Toast.LENGTH_SHORT).show();
-                                                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                                                    startActivity(intent);
+                                                    finish();
                                                 }
                                                 else{
                                                     Toast.makeText(RegisterActivity.this, "회원가입 중 오류가 발생하였습니다.", Toast.LENGTH_SHORT).show();
