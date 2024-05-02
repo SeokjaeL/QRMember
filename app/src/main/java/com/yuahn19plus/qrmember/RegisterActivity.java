@@ -43,13 +43,13 @@ public class RegisterActivity extends AppCompatActivity {
         db =FirebaseFirestore.getInstance();        // 파이어베이스 파이어스토어
 
         // 에디트 텍스트
-        mEtEmail = findViewById(R.id.et_email);
-        mEtPwd = findViewById(R.id.et_pwd);
-        mEtPwdCheck = findViewById(R.id.et_pwd_check);
-        mEtName = findViewById(R.id.et_name);
-        mEtPhone = findViewById(R.id.et_phone);
-        mEtBirthday = findViewById(R.id.et_birthday);
-        mEtAddr = findViewById(R.id.et_addr);
+        mEtEmail = (EditText) findViewById(R.id.et_email);
+        mEtPwd = (EditText) findViewById(R.id.et_pwd);
+        mEtPwdCheck = (EditText) findViewById(R.id.et_pwd_check);
+        mEtName = (EditText) findViewById(R.id.et_name);
+        mEtPhone = (EditText) findViewById(R.id.et_phone);
+        mEtBirthday = (EditText) findViewById(R.id.et_birthday);
+        mEtAddr = (EditText) findViewById(R.id.et_addr);
 
         // 버튼
         mBtnRegister = (Button) findViewById(R.id.btn_register);

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AdminMenuActivity">
+
+    <Button
+        android:id="@+id/btn_addAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="관리자 추가"
+        tools:layout_editor_absoluteX="226dp"
+        tools:layout_editor_absoluteY="50dp" />
+    <Button
+        android:id="@+id/btn_adminManagement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="관리자 관리"
+        tools:layout_editor_absoluteX="226dp"
+        tools:layout_editor_absoluteY="50dp" />
+
+    <Button
+        android:id="@+id/btn_adminInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="관리자 정보"
+        tools:layout_editor_absoluteX="226dp"
+        tools:layout_editor_absoluteY="50dp" />
+    <Button
+        android:id="@+id/btn_adminlogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그아웃"
+        tools:layout_editor_absoluteX="226dp"
+        tools:layout_editor_absoluteY="50dp" />
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/et_adminid"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:hint="관리자 아이디 입력"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/et_adminpwd"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:hint="관리자 비밀번호 입력"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btn_adminlogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"/>
+
+</LinearLayout>

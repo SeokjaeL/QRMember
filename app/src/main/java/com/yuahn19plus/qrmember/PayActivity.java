@@ -32,10 +32,8 @@ public class PayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pay);
 
-        amountEditText = findViewById(R.id.amountEditText);
-        payButton = findViewById(R.id.payButton);
-
-        FirebaseAuth fa;
+        amountEditText = (EditText) findViewById(R.id.amountEditText);
+        payButton = (Button) findViewById(R.id.payButton);
 
         payButton.setOnClickListener(new View.OnClickListener() {
             @Override

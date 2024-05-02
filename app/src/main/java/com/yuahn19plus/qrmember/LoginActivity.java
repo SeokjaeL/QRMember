@@ -19,8 +19,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth; //파이어베이스 인증
-
-    private DatabaseReference mDatabaseRef; //파이어베이스 리얼타임 데이터베이스
     private EditText mEtEmail, mEtPwd;  // 에디트 텍스트
     private Button mBtnRegister, mBtnLogin, mBtnAnonymousLogin; // 버튼
 
@@ -30,11 +28,10 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference();
 
-        mEtEmail = findViewById(R.id.et_email);
-        mEtPwd = findViewById(R.id.et_pwd);
-        mBtnLogin = findViewById(R.id.btn_login);
+        mEtEmail = (EditText) findViewById(R.id.et_email);
+        mEtPwd = (EditText) findViewById(R.id.et_pwd);
+        mBtnLogin = (Button) findViewById(R.id.btn_login);
         mBtnAnonymousLogin = (Button) findViewById(R.id.btn_anonymous_login);
         mBtnRegister = (Button) findViewById(R.id.btn_register);
 
