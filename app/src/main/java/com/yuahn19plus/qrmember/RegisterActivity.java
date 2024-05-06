@@ -23,6 +23,7 @@ import com.google.firebase.auth.SignInMethodQueryResult;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -113,8 +114,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String strPwd = mEtPwd.getText().toString();
                 String strPwdCheck = mEtPwdCheck.getText().toString();
                 // 사용자가 입력한 회원가입 정보 추출
-                FirebaseUser firebaseUser = mFirebaseAuth.getCurrentUser();
-                String uid = firebaseUser.getUid();
+                FirebaseUser firebaseUser;
                 String strName = mEtName.getText().toString();
                 String strPhone = mEtPhone.getText().toString();
                 String strAddr = mEtAddr.getText().toString();
@@ -151,13 +151,11 @@ public class RegisterActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
 
-                                    // 사용자 생성 성공, 사용자의 UID 가져오기
-                                    FirebaseUser firebaseUser = task.getResult().getUser();
-                                    String uid = firebaseUser.getUid();  // 이 UID를 문서 ID로 사용
-
                                     // Firebase에 저장할 데이터 객체 생성
                                     if(task.isSuccessful()){
-
+                                        // 사용자 생성 성공, 사용자의 UID 가져오기
+                                        FirebaseUser firebaseUser = task.getResult().getUser();
+                                        String uid = firebaseUser.getUid();  // 이 UID를 문서 ID로 사용
 
                                         // Firebase에 저장할 데이터 객체 생성
                                         Map<String, Object> user = new HashMap<>();
@@ -166,6 +164,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         user.put("phone", strPhone);
                                         user.put("birthday", strBirthday);
                                         user.put("addr", strAddr);
+                                        user.put("joindate", new Date());
                                         user.put("point", 50);
 
                                         // "User" 컬렉션에 데이터 추가

@@ -16,9 +16,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth; //파이어베이스 인증
+    private FirebaseFirestore db;
     private EditText mEtEmail, mEtPwd;  // 에디트 텍스트
     private Button mBtnRegister, mBtnLogin, mBtnAnonymousLogin; // 버튼
 
@@ -89,6 +91,8 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+
+
 
 
 }
